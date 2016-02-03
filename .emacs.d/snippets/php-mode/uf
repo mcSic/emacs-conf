@@ -1,0 +1,11 @@
+# -*- mode: snippet; require-final-newline: t -*-
+# name: public fn
+# key: uf
+# --
+/**
+  * @author Maksym Kaban
+  */
+public function $1()
+{ //{{{
+$0  
+} //}}}

@@ -1,0 +1,10 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("finditemsforadult"
+ (filename . "/var/usr/www/anycontent-web/src/Csp/Cache/AccommodationBundle/Services/Hotelbeds/Price/BoardCalculator.php")
+ (front-context-string . "_filter($adultBo")
+ (rear-context-string . "ardItems = array")
+ (position . 2138))
+)

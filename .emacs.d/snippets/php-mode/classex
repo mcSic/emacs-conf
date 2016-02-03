@@ -1,0 +1,12 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: class extends
+# key: clex
+# --
+
+ /**
+  *  @author Maksym Kaban
+  */
+class  ${0} extends ${1}
+{
+  ${2}
+}

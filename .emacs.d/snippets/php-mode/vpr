@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: protected variable
+# key: vpr
+# --
+protected $${variableName};

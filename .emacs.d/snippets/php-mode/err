@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: t -*-
+# name: error_log(print_r(.....
+# key: erl
+# --
+error_log(print_r($1, true));$0
