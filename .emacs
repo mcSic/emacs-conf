@@ -1,3 +1,7 @@
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
@@ -6,76 +10,77 @@
 (require 'recentf)
 
 (global-linum-mode 1)
-
-(require 'tramp)
-;; (setq tramp-default-user "content_inn"
-;;        tramp-default-host "88.208.59.160" )
-(setq tramp-default-user "mkaban"
-     tramp-default-host "172.19.5.222" )
-(add-to-list 'tramp-default-user-alist
-	     '("ssh" "192.168.40.167" "mkaban")
-	     '("ssh" "88.208.59.160" "content_inn")
-)
-
-(require 'ido)
 (ido-mode t)
 
-;;(require 'imenu)
-;;(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
-
-(load "~/.emacs.d/rc/emacs-rc-phpmode.el")
-(load "~/.emacs.d/rc/emacs-rc-webmode.el")
-(load "~/.emacs.d/rc/emacs-rc-js.el")
-(load "~/.emacs.d/rc/emacs-rc-css.el")
-(load "~/.emacs.d/rc/emacs-rc-yaml.el")
-(load "~/.emacs.d/rc/emacs-rc-misc.el")
+(load "~/.emacs.d/rc/emacs-rc-view.el")
+;;(load "~/.emacs.d/rc/emacs-rc-cedet.el")
+;;(load "~/.emacs.d/rc/emacs-rc-ecb.el")
+(load "~/.emacs.d/rc/emacs-rc-tramp.el")
+(load "~/.emacs.d/rc/emacs-rc-mule.el")
+;;(load "~/.emacs.d/rc/emacs-rc-mule-unix.el")
+(load "~/.emacs.d/rc/emacs-rc-buffers.el")
+;;(load "~/.emacs.d/rc/emacs-rc-gnus.el")
+(load "~/.emacs.d/rc/emacs-rc-defaultcontent.el")
+;;(load "~/.emacs.d/rc/emacs-rc-geben.el")
 (load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
-
-(setq uniquify-buffer-name-style 'reverse)
-(setq uniquify-separator "/")
-(setq uniquify-after-kill-buffer-p t)
-(setq uniquify-ignore-buffers-re "^\\*")
-
-
+;;Programming languages
+(load "~/.emacs.d/rc/emacs-rc-js.el")
+;; (load "~/.emacs.d/rc/emacs-rc-html.el")
+(load "~/.emacs.d/rc/emacs-rc-web.el")
+(load "~/.emacs.d/rc/emacs-rc-yaml.el")
+(load "~/.emacs.d/rc/emacs-rc-ccmode.el")
+(load "~/.emacs.d/rc/emacs-rc-phpmode.el")
+(load "~/.emacs.d/rc/emacs-rc-ruby.el")
+;;Misc
+(load "~/.emacs.d/rc/emacs-rc-w3m.el")
+(load "~/.emacs.d/rc/emacs-rc-misc.el")
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(c-basic-offset 2)
- '(indent-tabs-mode nil)
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(ange-ftp-try-passive-mode t)
+ '(confirm-kill-emacs (quote yes-or-no-p))
+ '(ecb-auto-compatibility-check t)
+ '(ecb-layout-name "left15")
+ '(ecb-options-version "2.32")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+ '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15")))
+ '(ecb-source-path (quote (("/home/maksik/projects/nata/htdocs" "nata") ("/home/maksik/projects/amadoka/htdocs" "amadoka") ("/home/maksik/projects/breinex/htdocs" "breinex") ("/home/maksik/projects/doctor" "doctor") ("/home/maksik/projects/Denis-help" "Denis-help") ("/home/maksik/sandbox/koans" "koans"))))
+ '(ecb-tip-of-the-day nil)
+ '(ecb-tree-buffer-style (quote image))
+ '(ecb-tree-image-icons-directories (quote ("~/.emacs.d/lisp/ecb/ecb-images/default/height-17" (ecb-directories-buffer-name . "~/.emacs.d/lisp/ecb/ecb-images/directories/height-17") (ecb-sources-buffer-name . "~/.emacs.d/lisp/ecb/ecb-images/sources/height-14_to_21") (ecb-methods-buffer-name . "~/.emacs.d/lisp/ecb/ecb-images/methods/height-14_to_21"))))
  '(inhibit-startup-screen t)
+ '(js-indent-level 2)
+ '(make-backup-files nil)
  '(scroll-step 1)
  '(show-paren-mode t)
- '(tab-width 2)
+ '(tab-width 4)
  '(transient-mark-mode t)
- )
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(global-set-key (kbd "C-x v") 'find-file-at-point)
+ '(truncate-partial-width-windows nil)
+ '(uniquify-buffer-name-style (quote reverse) nil (uniquify))
+ '(uniquify-ignore-buffers-re "^\\*")
+ '(uniquify-separator "/"))
 
-(require 'speedbar)
-(speedbar 1)
 
-(global-set-key (kbd "C-M-]") 'other-window)
-(put 'narrow-to-region 'disabled nil)
+(desktop-load-default)
+(desktop-save-mode t)
+;;(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+;; )
 
-(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
-(require 'yasnippet)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/packages/yasnippet/snippets" "~/.emacs.d/snippets"))
-(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
-(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/yasnippets/snippets/Create-PHP-YASnippet.php")
- (require 'php-auto-yasnippets)
+(defun toggle-php-html-mode()
+  (interactive)
+ ;; (mode-name)
+   (cond ((equal mode-name '(sgml-xml-mode "XHTML" "HTML"))
+   		 (php-mode))
+   		((string= mode-name "PHP")
+   		 (html-mode)))
 
-(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
-(setq php-executable "/usr/bin/php")
-
-(yas-global-mode 1)
+)
 
 (defun rename-file-and-buffer (new-name)
   "Renames both current buffer and file it's visiting to NEW-NAME"
@@ -100,20 +105,38 @@
 		(save-buffer)
 	  (set-buffer-modified-p nil))
 	(message "Renamed to %s" new-name)))
+  
+
+(global-set-key [f5] 'toggle-php-html-mode)
 
 
-(defun xml-format ()
-  (interactive)
-  (save-excursion
-    (shell-command-on-region (mark) (point) "xmllint --format -" (buffer-name) t)
-    )
-  )
 
-(put 'upcase-region 'disabled nil)
 
-(desktop-load-default)
-(desktop-save-mode t)
+;; SBCL
+;; (setq inferior-lisp-program "/usr/local/bin/sbcl") ; your Lisp system
+;; (setq slime-lisp-implementations '((sbcl ("sbcl"))))
+;; (setq slime-startup-animation nil)
+;; SLIME
+;; (add-to-list 'load-path "~/sandbox/web-lisp/slime-2011-01-11") ;; Путь к slime
+;; (require 'slime)
+;; (setq slime-net-coding-system 'utf-8-unix)
+;; (slime-setup '(slime-fancy))
+;; (setq slime-enable-evaluate-in-emacs t)
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
 
-(global-set-key (kbd "C-<tab>") 'next-user-buffer)
-(global-set-key (kbd "C-S-<iso-lefttab>") 'previous-user-buffer)
+(add-to-list 'load-path
+              "~/.emacs.d/yasnippet")
+(require 'yasnippet)
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/yasnippet-extra-modes/yasnippet-php-mode/php-mode")
+(add-to-list 'yas-snippet-dirs "~/.emacs.d/snippets/php-mode/")
+(yas-global-mode 1)
+
+(put 'set-goal-column 'disabled nil)
+
+(global-set-key (kbd "C-M-]") 'other-window)
 (put 'downcase-region 'disabled nil)
