@@ -114,6 +114,24 @@
 (desktop-load-default)
 (desktop-save-mode t)
 
+(set-language-environment 'UTF-8)
+(setq default-buffer-file-coding-system 'mule-utf-8-dos)
+(prefer-coding-system 'mule-utf-8-dos)
+(set-terminal-coding-system 'mule-utf-8-dos)
+(set-keyboard-coding-system 'mule-utf-8-dos)
+(setq-default coding-system-for-read 'mule-utf-8-dos)
+(setq-default coding-system-for-write 'mule-utf-8-dos)
+(setq selection-coding-system 'mule-utf-8-dos)
+(setq default-process-coding-system 'mule-utf-8-dos)
+(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-dos)
+
+
 (global-set-key (kbd "C-<tab>") 'next-user-buffer)
 (global-set-key (kbd "C-S-<iso-lefttab>") 'previous-user-buffer)
 (put 'downcase-region 'disabled nil)
+
+(defun downcase-first-char (str)
+  (concat
+   (downcase (substring str 0 1))
+   (substring str 1))
+  )

@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: protected var
+# key: prvar
+# --
+
+/**
+  * @author Maksym Kaban
+  */
+protected ${0};
+$0

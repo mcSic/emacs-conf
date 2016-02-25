@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: getter method
+# key: getter
+# --
+
+/**
+  * @author Maksym Kaban
+  */
+public function get${1:Value}()
+{ //{{{
+  return \$this->${1:$(downcase-first-char yas-text)};
+} //}}}
+$0

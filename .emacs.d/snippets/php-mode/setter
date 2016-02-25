@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: setter method
+# key: setter
+# --
+
+/**
+  * @author Maksym Kaban
+  */
+public function set${1:Value}(\$${1:$(downcase-first-char yas-text)})
+{ //{{{
+  \$this->${1:$(downcase-first-char yas-text)} = \$${1:$(downcase-first-char yas-text)};
+} //}}}
+$0

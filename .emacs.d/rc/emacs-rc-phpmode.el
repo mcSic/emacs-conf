@@ -1,22 +1,22 @@
 ;;; $Id$
-;;(load-file "~/.emacs.d/progmodes/php-mode-exp.el")
-;;(load-file "~/.emacs.d/progmodes/php-mode-improved.el")
 (load-file "~/.emacs.d/progmodes/php-mode.el")
 
+(load "~/.emacs.d/progmodes/php/symfony1.el")
+(load "~/.emacs.d/progmodes/php/symfony2.el")
+
+;;   (message "here php-mrm-indentation")
+;; )
+
 (defun php-indentation()
+  ;;(setq c-default-style "gnu")
   (setq indent-tabs-mode nil)
   (set (make-local-variable 'tab-width) 2)
+
+  (set (make-local-variable 'c-basic-offset) 2)
+  (c-set-offset 'substatement-open 0)
+  
   (setq buffer-file-coding-system 'mule-utf-8-unix)
-  (setq php-template-compatibility nil)
-  (c-add-style
-   "symfony1"
-   '("php"
-     (c-basic-offset . 2)
-     (statement-cont . +)
-     (arglist-cont-nonempty . +)
-     ))
-  (c-set-style "symfony1")
-  (message "test1")
+
 )
 
 (add-hook 'php-mode-hook 'php-indentation)
