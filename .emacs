@@ -23,6 +23,9 @@
 ;;(require 'imenu)
 ;;(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized t)
+
 (load "~/.emacs.d/rc/emacs-rc-phpmode.el")
 (load "~/.emacs.d/rc/emacs-rc-webmode.el")
 (load "~/.emacs.d/rc/emacs-rc-js.el")
@@ -62,6 +65,13 @@
 (speedbar 1)
 
 (global-set-key (kbd "C-M-]") 'other-window)
+(defun prev-window ()
+  ""
+  (interactive
+   (other-window -1)))
+
+(global-set-key (kbd "C-M-}") 'prev-window)
+
 (put 'narrow-to-region 'disabled nil)
 
 (add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
