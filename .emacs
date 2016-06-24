@@ -146,6 +146,8 @@
    (substring str 1))
   )
 
-(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/ecb")
+(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
+(require 'nginx-mode)
 
+(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/ecb")
 (require 'ecb)
