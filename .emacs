@@ -135,3 +135,6 @@
    (downcase (substring str 0 1))
    (substring str 1))
   )
+
+(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
+(require 'nginx-mode)
