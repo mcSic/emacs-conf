@@ -47,6 +47,7 @@
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
  '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(scroll-step 1)
@@ -146,8 +147,18 @@
    (substring str 1))
   )
 
-(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
-(require 'nginx-mode)
+;;(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
+;;(require 'nginx-mode)
 
 (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/ecb")
 (require 'ecb)
+;;(ecb-activate)
+
+(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
+(require 'multiple-cursors)
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
