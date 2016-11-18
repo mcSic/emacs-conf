@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: error_log(print_r(debug_backtrace.....
+# key: erdb
+# binding: direct-keybinding
+# --
+error_log(print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10), true));$0
+
