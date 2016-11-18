@@ -3,7 +3,7 @@
 ;; (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
 (autoload 'css-mode "css-mode")
-(setq auto-mode-alist       
+(setq auto-mode-alist
   (cons '("\\.css\\'" . css-mode) auto-mode-alist))
 
 
