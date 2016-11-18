@@ -23,8 +23,8 @@
 ;;(require 'imenu)
 ;;(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
-(load-theme 'solarized t)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+;;(Load-theme 'solarized t)
 
 (load "~/.emacs.d/rc/emacs-rc-phpmode.el")
 (load "~/.emacs.d/rc/emacs-rc-webmode.el")
@@ -126,15 +126,15 @@
 (desktop-save-mode t)
 
 (set-language-environment 'UTF-8)
-(setq default-buffer-file-coding-system 'mule-utf-8-dos)
-(prefer-coding-system 'mule-utf-8-dos)
-(set-terminal-coding-system 'mule-utf-8-dos)
-(set-keyboard-coding-system 'mule-utf-8-dos)
-(setq-default coding-system-for-read 'mule-utf-8-dos)
-(setq-default coding-system-for-write 'mule-utf-8-dos)
-(setq selection-coding-system 'mule-utf-8-dos)
-(setq default-process-coding-system 'mule-utf-8-dos)
-(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-dos)
+(setq default-buffer-file-coding-system 'mule-utf-8-unix)
+(prefer-coding-system 'mule-utf-8-unix)
+(set-terminal-coding-system 'mule-utf-8-unix)
+(set-keyboard-coding-system 'mule-utf-8-unix)
+(setq-default coding-system-for-read 'mule-utf-8-unix)
+(setq-default coding-system-for-write 'mule-utf-8-unix)
+(setq selection-coding-system 'mule-utf-8-unix)
+(setq default-process-coding-system 'mule-utf-8-unix)
+(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-unix)
 
 
 (global-set-key (kbd "C-<tab>") 'next-user-buffer)
@@ -162,3 +162,9 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
