@@ -3,3 +3,10 @@
 ido.last
 .emacs.desktop
 .emacs.desktop.lock
+.emacs.d/bookmarks
+.emacs.d/elpa
+.emacs.d/places
+.emacs.d/recentf
+.emacs.d/tramp
+.emacs.d/.mc-lists.el
+.directory
