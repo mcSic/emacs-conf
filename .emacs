@@ -33,12 +33,8 @@
 (load "~/.emacs.d/rc/emacs-rc-yaml.el")
 (load "~/.emacs.d/rc/emacs-rc-misc.el")
 (load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
-
-(setq uniquify-buffer-name-style 'reverse)
-(setq uniquify-separator "/")
-(setq uniquify-after-kill-buffer-p t)
-(setq uniquify-ignore-buffers-re "^\\*")
-
+(load "~/.emacs.d/rc/emacs-rc-uniquify.el")
+(load "~/.emacs.d/rc/emacs-rc-files-buffers.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -46,8 +42,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
+ '(ecb-auto-activate t)
+ '(ecb-layout-name "mk-left-1")
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+ '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15" "mk-left-1")))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(scroll-step 1)
@@ -60,18 +59,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(global-set-key (kbd "C-x v") 'find-file-at-point)
 
-(require 'speedbar)
-(speedbar 1)
-
-(global-set-key (kbd "C-M-]") 'other-window)
-(defun prev-window ()
-  ""
-  (interactive
-   (other-window -1)))
-
-(global-set-key (kbd "C-M-}") 'prev-window)
+;; (require 'speedbar)
+;; (speedbar 1)
 
 (put 'narrow-to-region 'disabled nil)
 
@@ -79,39 +69,14 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs
       '("~/.emacs.d/packages/yasnippet/snippets" "~/.emacs.d/snippets"))
-(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
-(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/yasnippets/snippets/Create-PHP-YASnippet.php")
- (require 'php-auto-yasnippets)
+;;(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
+;;(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
+;;(require 'php-auto-yasnippets)
 
 (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 (setq php-executable "/usr/bin/php")
 
 (yas-global-mode 1)
-
-(defun rename-file-and-buffer (new-name)
-  "Renames both current buffer and file it's visiting to NEW-NAME"
-  (interactive 
-   (progn
-	 (if (not (buffer-file-name))
-		 (error "Buffer '%s' is not visiting any file!" (buffer-name)))
-	 (list (read-file-name (format "Rename %s to: " (file-name-nondirectory
-													 (buffer-file-name)))))))
-  (if (equal new-name "")
-	  (error "Aborted rename"))
-  (setq new-name (if (file-directory-p new-name)
-					 (expand-file-name (file-name-nondirectory
-										(buffer-file-name))
-									   new-name)
-				   (expand-file-name new-name)))
-  (if (file-exists-p (buffer-file-name))
-	  (rename-file (buffer-file-name) new-name 1))
-  (let ((was-modified (buffer-modified-p)))
-	(set-visited-file-name new-name)
-	(if was-modified
-		(save-buffer)
-	  (set-buffer-modified-p nil))
-	(message "Renamed to %s" new-name)))
-
 
 (defun xml-format ()
   (interactive)
@@ -126,15 +91,15 @@
 (desktop-save-mode t)
 
 (set-language-environment 'UTF-8)
-(setq default-buffer-file-coding-system 'mule-utf-8-dos)
-(prefer-coding-system 'mule-utf-8-dos)
-(set-terminal-coding-system 'mule-utf-8-dos)
-(set-keyboard-coding-system 'mule-utf-8-dos)
-(setq-default coding-system-for-read 'mule-utf-8-dos)
-(setq-default coding-system-for-write 'mule-utf-8-dos)
-(setq selection-coding-system 'mule-utf-8-dos)
-(setq default-process-coding-system 'mule-utf-8-dos)
-(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-dos)
+(setq default-buffer-file-coding-system 'mule-utf-8-unix)
+(prefer-coding-system 'mule-utf-8-unix)
+(set-terminal-coding-system 'mule-utf-8-unix)
+(set-keyboard-coding-system 'mule-utf-8-unix)
+(setq-default coding-system-for-read 'mule-utf-8-unix)
+(setq-default coding-system-for-write 'mule-utf-8-unix)
+(setq selection-coding-system 'mule-utf-8-unix)
+(setq default-process-coding-system 'mule-utf-8-unix)
+(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-unix)
 
 
 (global-set-key (kbd "C-<tab>") 'next-user-buffer)
@@ -162,3 +127,17 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "https://melpa.org/packages/")
+   t)
+  (package-initialize))
+  
+;; (when (< emacs-major-version 24)
+;;   ;; For important compatibility libraries like cl-lib
+;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
+(put 'erase-buffer 'disabled nil)
