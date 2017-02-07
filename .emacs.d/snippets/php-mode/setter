@@ -7,7 +7,8 @@
   * @author Maksym Kaban
   */
 public function set${1:Value}(\$${1:$(downcase-first-char yas-text)})
-{ //{{{
+{
   \$this->${1:$(downcase-first-char yas-text)} = \$${1:$(downcase-first-char yas-text)};
-} //}}}
+  return \$this;
+}
 $0

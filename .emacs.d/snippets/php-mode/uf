@@ -6,6 +6,6 @@
   * @author Maksym Kaban
   */
 public function $1($2)
-{ //{{{
+{
 $0  
-} //}}}
+}

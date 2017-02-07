@@ -2,11 +2,10 @@
 # name: protected function
 # key: prf
 # --
-
 /**
   * @author Maksym Kaban
   */
-protected function ${0}()
-{ //{{{
-  
-} //}}}
+protected function $1()
+{
+  $0
+}

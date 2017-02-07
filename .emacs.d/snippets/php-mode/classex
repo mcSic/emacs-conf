@@ -2,11 +2,10 @@
 # name: class extends
 # key: clex
 # --
-
- /**
+/**
   *  @author Maksym Kaban
   */
-class  ${0} extends ${1}
+class  $1 extends $2
 {
-  ${2}
+  $0
 }
