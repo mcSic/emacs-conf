@@ -141,3 +141,6 @@
 ;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (put 'erase-buffer 'disabled nil)
+
+;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/elpa/auto-complete-20170124.1845/auto-complete.el")
+;; (require 'auto-complete)

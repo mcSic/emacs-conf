@@ -3,7 +3,7 @@
 # key: uf
 # --
 /**
-  * @author Maksym Kaban
+  * @public
   */
 public function $1($2)
 {

@@ -4,7 +4,7 @@
 # --
 
 /**
-  * @author Maksym Kaban
+  * @var
   */
 protected \$$1;
 $0
