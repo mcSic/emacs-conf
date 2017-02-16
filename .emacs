@@ -5,6 +5,8 @@
 (require 'ansi-color)
 (require 'recentf)
 
+(set-face-attribute 'default nil :height 100)
+
 (global-linum-mode 1)
 
 (require 'tramp)
@@ -23,8 +25,8 @@
 ;;(require 'imenu)
 ;;(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
-(load-theme 'solarized t)
+;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
+;;(Load-theme 'solarized t)
 
 (load "~/.emacs.d/rc/emacs-rc-phpmode.el")
 (load "~/.emacs.d/rc/emacs-rc-webmode.el")
@@ -119,10 +121,14 @@
 (require 'ecb)
 ;;(ecb-activate)
 
-(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
-(require 'multiple-cursors)
+;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
+;; (require 'multiple-cursors)
 
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -136,9 +142,9 @@
    t)
   (package-initialize))
   
-;; (when (< emacs-major-version 24)
-;;   ;; For important compatibility libraries like cl-lib
-;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (put 'erase-buffer 'disabled nil)
 
