@@ -62,8 +62,13 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; (require 'speedbar)
-;; (speedbar 1)
+(global-set-key (kbd "C-x v") 'find-file-at-point)
+
+(global-set-key (kbd "C-M-]") 'other-window)
+(defun prev-window ()
+  ""
+  (interactive
+   (other-window -1)))
 
 (put 'narrow-to-region 'disabled nil)
 
