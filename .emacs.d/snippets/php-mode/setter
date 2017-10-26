@@ -4,7 +4,7 @@
 # --
 
 /**
-  * @author Maksym Kaban
+  * setter $${1:$(downcase-first-char yas-text)}
   */
 public function set${1:Value}(\$${1:$(downcase-first-char yas-text)})
 {

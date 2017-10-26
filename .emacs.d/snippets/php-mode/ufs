@@ -3,9 +3,9 @@
 # key: ufs
 # --
 /**
-  * @author Maksym Kaban
+  * @public
   */
-public static function $1()
+public static function $1($2)
 {
 $0  
 }

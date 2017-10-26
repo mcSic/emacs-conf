@@ -1,0 +1,13 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: protected static method
+# key: prfs
+# binding: direct-keybinding
+# --
+/**
+  * @protected
+  * @return $2
+  */
+protected static function $1()
+{
+  $0
+}

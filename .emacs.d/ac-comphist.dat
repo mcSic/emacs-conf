@@ -1,0 +1,44 @@
+((("rest" .
+   [1 0 0 0])
+  ("RestResponseWrapper" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("generateSuccess" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("RestController" .
+   [0 0 0 0 0 1 1 0 0 0 0 0 0 0])
+  ("generateError" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("status" .
+   [1 0 0 0 0 0])
+  ("json_encode" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("renderText" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("$this" .
+   [4 0 0 0 0])
+  ("$request" .
+   [0 0 0 0 0 0 0 1])
+  ("implode" .
+   [0 0 0 0 1 0 0])
+  ("Direct" .
+   [0 0 0 0 0 1])
+  ("setStatus" .
+   [1 0 0 0 0 0 1 0 0])
+  ("R" .
+   [1])
+  ("RestServiceFactory" .
+   [0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("ERROR" .
+   [1 0 0 0 0])
+  ("setStatusCode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("us" .
+   [1 0])
+  ("createResponse" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("forward404" .
+   [1 0 0 0 0 0 0 0 0 0])
+  ("forward404If" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("forward404Unless" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))

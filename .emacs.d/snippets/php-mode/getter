@@ -4,7 +4,7 @@
 # --
 
 /**
-  * @author Maksym Kaban
+  * getter $${1:$(downcase-first-char yas-text)}
   */
 public function get${1:Value}()
 {

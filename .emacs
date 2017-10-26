@@ -49,6 +49,7 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15" "mk-left-1")))
+ '(flycheck-javascript-jshint-executable "/home/mkaban/.nvm/versions/node/v4.4.1/bin/jshint")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(scroll-step 1)
@@ -155,3 +156,13 @@
 
 ;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/elpa/auto-complete-20170124.1845/auto-complete.el")
 ;; (require 'auto-complete)
+
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (use-package flycheck
+;;              :ensure t
+;;              :init (global-flycheck-mode))

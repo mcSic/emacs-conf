@@ -3,6 +3,7 @@
 
 (load "~/.emacs.d/progmodes/php/symfony1.el")
 (load "~/.emacs.d/progmodes/php/symfony2.el")
+(load "~/.emacs.d/progmodes/php/php-doc.el")
 
 ;;   (message "here php-mrm-indentation")
 ;; )

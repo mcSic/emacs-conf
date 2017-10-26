@@ -3,7 +3,7 @@
 # key: prf
 # --
 /**
-  * @author Maksym Kaban
+  * @return $2
   */
 protected function $1()
 {
