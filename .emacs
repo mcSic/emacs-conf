@@ -37,6 +37,7 @@
 (load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
 (load "~/.emacs.d/rc/emacs-rc-uniquify.el")
 (load "~/.emacs.d/rc/emacs-rc-files-buffers.el")
+(load "~/.emacs.d/rc/emacs-rc-ecb.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -44,11 +45,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
- '(ecb-auto-activate t)
- '(ecb-layout-name "mk-left-1")
- '(ecb-options-version "2.40")
- '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
- '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15" "mk-left-1")))
  '(flycheck-javascript-jshint-executable "/home/mkaban/.nvm/versions/node/v4.4.1/bin/jshint")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
@@ -76,15 +72,15 @@
 (add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
 (require 'yasnippet)
 (setq yas-snippet-dirs
-      '("~/.emacs.d/packages/yasnippet/snippets" "~/.emacs.d/snippets"))
-;;(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
+       '("~/.emacs.d/packages/yasnippet/snippets" "~/.emacs.d/snippets"))
+(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
 ;;(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
 ;;(require 'php-auto-yasnippets)
 
-(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+;; (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 (setq php-executable "/usr/bin/php")
 
-(yas-global-mode 1)
+;;(yas-global-mode 1)
 
 (defun xml-format ()
   (interactive)
@@ -122,10 +118,6 @@
 
 ;;(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
 ;;(require 'nginx-mode)
-
-(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/ecb")
-(require 'ecb)
-;;(ecb-activate)
 
 ;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
 ;; (require 'multiple-cursors)
