@@ -45,9 +45,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 2)
+ '(ecb-auto-activate t)
+ '(ecb-layout-name "mk-left-1")
+ '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+ '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15" "mk-left-1")))
  '(flycheck-javascript-jshint-executable "/home/mkaban/.nvm/versions/node/v4.4.1/bin/jshint")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (yasnippet flycheck exec-path-from-shell auto-complete-exuberant-ctags ac-php ac-etags)))
  '(scroll-step 1)
  '(show-paren-mode t)
  '(tab-width 2)
@@ -59,21 +67,19 @@
  ;; If there is more than one, they won't work right.
  )
 
-(global-set-key (kbd "C-x v") 'find-file-at-point)
+;; (global-set-key (kbd "C-x v") 'find-file-at-point)
 
-(global-set-key (kbd "C-M-]") 'other-window)
-(defun prev-window ()
-  ""
-  (interactive
-   (other-window -1)))
+;; (global-set-key (kbd "C-M-]") 'other-window)
+;; (defun prev-window ()
+;;   ""
+;;   (interactive
+;;    (other-window -1)))
 
 (put 'narrow-to-region 'disabled nil)
 
-(add-to-list 'load-path "~/.emacs.d/packages/yasnippet")
-(require 'yasnippet)
 (setq yas-snippet-dirs
-       '("~/.emacs.d/packages/yasnippet/snippets" "~/.emacs.d/snippets"))
-(add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
+       '("~/.emacs.d/snippets"))
+;; (add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
 ;;(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
 ;;(require 'php-auto-yasnippets)
 
@@ -91,8 +97,7 @@
 
 (put 'upcase-region 'disabled nil)
 
-(desktop-load-default)
-(desktop-save-mode t)
+(desktop-save-mode 1)
 
 (set-language-environment 'UTF-8)
 (setq default-buffer-file-coding-system 'mule-utf-8-unix)
