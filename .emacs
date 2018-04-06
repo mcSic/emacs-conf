@@ -60,6 +60,19 @@
  '(show-paren-mode t)
  '(tab-width 2)
  '(transient-mark-mode t))
+
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "https://melpa.org/packages/")
+   t)
+  (package-initialize))
+  
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -76,17 +89,21 @@
 ;;    (other-window -1)))
 
 (put 'narrow-to-region 'disabled nil)
-
-(setq yas-snippet-dirs
-       '("~/.emacs.d/snippets"))
-;; (add-to-list 'load-path "~/.emacs.d/packages/php-auto-yasnippets")
-;;(setq php-auto-yasnippets-php-program "~/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
-;;(require 'php-auto-yasnippets)
-
-;; (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
 (setq php-executable "/usr/bin/php")
 
-;;(yas-global-mode 1)
+
+(setq yas-snippet-dirs
+      '("~/conf/.emacs.d/snippets"))
+(require 'yasnippet)
+(yas-global-mode 1)
+
+
+(add-to-list 'load-path "~/conf/.emacs.d/packages/php-auto-yasnippets")
+(setq php-auto-yasnippets-php-program "~/conf/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
+(require 'php-auto-yasnippets)
+
+(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+
 
 (defun xml-format ()
   (interactive)
@@ -121,33 +138,17 @@
    (substring str 1))
   )
 
-;;(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
-;;(require 'nginx-mode)
+(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
+(require 'nginx-mode)
 
-;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
-;; (require 'multiple-cursors)
+(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
+(require 'multiple-cursors)
 
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "https://melpa.org/packages/")
-   t)
-  (package-initialize))
-  
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (put 'erase-buffer 'disabled nil)
 
