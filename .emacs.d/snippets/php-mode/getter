@@ -3,10 +3,11 @@
 # key: getter
 # --
 
-/**
-  * getter $${1:$(downcase-first-char yas-text)}
+ /**
+  * @api
+  * @return ${2}
   */
-public function get${1:Value}()
+public function get${1:Value}(): ${3}
 {
   return \$this->${1:$(downcase-first-char yas-text)};
 }

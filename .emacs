@@ -138,8 +138,8 @@
    (substring str 1))
   )
 
-(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
-(require 'nginx-mode)
+;;(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
+;;(require 'nginx-mode)
 
 (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
 (require 'multiple-cursors)
@@ -168,7 +168,7 @@
 (setq sql-mysql-login-params
       '((user :default "contentinn")
         (database :default "content_inn_prod")
-        (password :defaukt "7887")
+        (password :default "7887")
         (server :default "127.0.0.1")
         (port :default 3300)))
 

@@ -4,9 +4,10 @@
 # --
 
 /**
-  * setter $${1:$(downcase-first-char yas-text)}
+  * @api
+  * @return ${2}
   */
-public function set${1:Value}(\$${1:$(downcase-first-char yas-text)})
+public function set${1:Value}(\$${1:$(downcase-first-char yas-text)}): self
 {
   \$this->${1:$(downcase-first-char yas-text)} = \$${1:$(downcase-first-char yas-text)};
   return \$this;

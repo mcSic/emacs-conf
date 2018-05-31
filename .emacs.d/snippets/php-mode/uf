@@ -5,8 +5,7 @@
 /**
   * $3
   *
-  *
-  * @public
+  * {@inheritdoc}
   */
 public function $1($2)
 {
