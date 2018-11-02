@@ -1,0 +1,32 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "sessionResultsProvider.js"
+      :pointmax 3025
+      :fsize 3024
+      :lastmodtime '(23468 56780 425092 482000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "asyncController.js"
+      :pointmax 14729
+      :fsize 14728
+      :lastmodtime '(23473 58902 798029 554000)
+      :unmatched-syntax '((PAREN_BLOCK 2 . 14727) (PAREN_BLOCK 2 . 14746) (PAREN_BLOCK 2 . 14927) (PAREN_BLOCK 2 . 14990)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "resultsCollection.js"
+      :pointmax 9759
+      :fsize 9758
+      :lastmodtime '(23458 20542 884649 279000)
+      :unmatched-syntax '((PAREN_BLOCK 2 . 9757))))
+  :file "!var!usr!www!csp.mk!web!public!src!js!modules!search!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

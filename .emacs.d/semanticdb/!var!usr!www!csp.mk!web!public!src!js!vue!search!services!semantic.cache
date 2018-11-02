@@ -1,0 +1,32 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "search.js"
+      :pointmax 556
+      :fsize 555
+      :lastmodtime '(23473 58902 798029 554000)
+      :unmatched-syntax '((VARIABLE 8 . 27) (VARIABLE 28 . 32) (STRING 33 . 56) (VARIABLE 58 . 64) (VARIABLE 65 . 79) (VARIABLE 80 . 84) (STRING 85 . 109) (VARIABLE 111 . 117) (VARIABLE 118 . 137) (VARIABLE 138 . 142) (STRING 143 . 172) (VARIABLE 175 . 180) (VARIABLE 181 . 187) (BRACE_BLOCK 188 . 527) (VARIABLE 528 . 534) (VARIABLE 535 . 542) (NEW 543 . 546) (PAREN_BLOCK 553 . 555)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "asyncSearchStrategy.js"
+      :pointmax 1410
+      :fsize 1409
+      :lastmodtime '(23469 63287 988301 285000)
+      :unmatched-syntax '((VARIABLE 8 . 19) (VARIABLE 20 . 24) (STRING 25 . 55) (VARIABLE 57 . 63) (VARIABLE 64 . 76) (VARIABLE 77 . 81) (STRING 82 . 113) (VARIABLE 115 . 121) (VARIABLE 122 . 133) (VARIABLE 134 . 138) (STRING 139 . 169) (VARIABLE 173 . 178) (VARIABLE 179 . 198) (BRACE_BLOCK 199 . 1368) (VARIABLE 1370 . 1376) (VARIABLE 1377 . 1384) (NEW 1385 . 1388) (PAREN_BLOCK 1408 . 1410)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "sessionStorageStrategy.js"
+      :pointmax 137
+      :fsize 136
+      :lastmodtime '(23467 25414 423689 333000)
+      :unmatched-syntax nil))
+  :file "!var!usr!www!csp.mk!web!public!src!js!vue!search!services!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

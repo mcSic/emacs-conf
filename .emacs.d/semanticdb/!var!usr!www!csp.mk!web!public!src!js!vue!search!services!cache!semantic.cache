@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "cacheValidator.js"
+      :pointmax 1814
+      :fsize 1813
+      :lastmodtime '(23473 58902 798029 554000)
+      :unmatched-syntax nil))
+  :file "!var!usr!www!csp.mk!web!public!src!js!vue!search!services!cache!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

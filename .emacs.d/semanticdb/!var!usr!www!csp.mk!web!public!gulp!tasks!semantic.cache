@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "compileVendor.js"
+      :pointmax 3087
+      :fsize 3086
+      :lastmodtime '(23473 58902 798029 554000)
+      :unmatched-syntax '((SEMICOLON 2893 . 2894) (VARIABLE 2922 . 2927) (VARIABLE 2928 . 2941) (PAREN_BLOCK 2950 . 2991) (SEMICOLON 1123 . 1124) (VARIABLE 1169 . 1174) (VARIABLE 1175 . 1194) (FUNCTION 1197 . 1205) (PAREN_BLOCK 1206 . 1208) (VARIABLE 610 . 615) (VARIABLE 616 . 634) (FUNCTION 637 . 645) (PAREN_BLOCK 646 . 648) (PAREN_BLOCK 546 . 564) (VARIABLE 491 . 496) (BRACE_BLOCK 497 . 536) (ASSIGN_SYMBOL 537 . 538) (PAREN_BLOCK 476 . 489) (VARIABLE 405 . 410) (BRACE_BLOCK 411 . 466) (ASSIGN_SYMBOL 467 . 468) (VARIABLE 364 . 369) (VARIABLE 370 . 376) (PAREN_BLOCK 386 . 402) (VARIABLE 317 . 322) (VARIABLE 323 . 329) (PAREN_BLOCK 339 . 362) (VARIABLE 275 . 280) (VARIABLE 281 . 291) (PAREN_BLOCK 301 . 315) (VARIABLE 237 . 242) (VARIABLE 243 . 248) (PAREN_BLOCK 258 . 273) (VARIABLE 198 . 203) (VARIABLE 204 . 210) (PAREN_BLOCK 220 . 235) (VARIABLE 159 . 164) (VARIABLE 165 . 171) (PAREN_BLOCK 181 . 196) (VARIABLE 112 . 117) (VARIABLE 118 . 128) (PAREN_BLOCK 138 . 157) (PAREN_BLOCK 102 . 110) (BRACE_BLOCK 73 . 92) (ASSIGN_SYMBOL 93 . 94))))
+  :file "!var!usr!www!csp.mk!web!public!gulp!tasks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

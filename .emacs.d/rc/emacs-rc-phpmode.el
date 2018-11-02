@@ -23,4 +23,6 @@
 (add-hook 'php-mode-hook 'php-indentation)
 (add-hook 'php-mode-hook (lambda () (subword-mode 1)))
 
+(setq php-executable "/usr/bin/php")
+
 ;;; end of emacs-rc-phpmode.el

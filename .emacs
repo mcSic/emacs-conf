@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
@@ -9,15 +16,7 @@
 
 (global-linum-mode 1)
 
-(require 'tramp)
-;; (setq tramp-default-user "content_inn"
-;;        tramp-default-host "88.208.59.160" )
-(setq tramp-default-user "mkaban"
-     tramp-default-host "172.19.5.222" )
-(add-to-list 'tramp-default-user-alist
-	     '("ssh" "192.168.40.167" "mkaban")
-	     '("ssh" "88.208.59.160" "content_inn")
-)
+(setq make-backup-files nil)
 
 (require 'ido)
 (ido-mode t)
@@ -27,17 +26,6 @@
 
 ;;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 ;;(Load-theme 'solarized t)
-
-(load "~/.emacs.d/rc/emacs-rc-phpmode.el")
-(load "~/.emacs.d/rc/emacs-rc-webmode.el")
-(load "~/.emacs.d/rc/emacs-rc-js.el")
-(load "~/.emacs.d/rc/emacs-rc-css.el")
-(load "~/.emacs.d/rc/emacs-rc-yaml.el")
-(load "~/.emacs.d/rc/emacs-rc-misc.el")
-(load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
-(load "~/.emacs.d/rc/emacs-rc-uniquify.el")
-(load "~/.emacs.d/rc/emacs-rc-files-buffers.el")
-(load "~/.emacs.d/rc/emacs-rc-ecb.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -50,28 +38,23 @@
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
  '(ecb-show-sources-in-directories-buffer (quote ("left7" "left13" "left14" "left15" "mk-left-1")))
+ '(ecb-source-path
+   (quote
+    (("/var/usr/www/csp.mk" "ContentInn")
+     ("/home/mkaban/sandbox/tour-of-heroes" "tour-of-heroes")
+     ("/home/mkaban/sandbox/budget" "pet-budget")
+     ("/home/mkaban/sandbox/new-search-form" "nsf"))))
  '(flycheck-javascript-jshint-executable "/home/mkaban/.nvm/versions/node/v4.4.1/bin/jshint")
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
+ '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (yasnippet flycheck exec-path-from-shell auto-complete-exuberant-ctags ac-php ac-etags)))
+    (xref-js2 company helm js2-mode typescript-mode yasnippet flycheck exec-path-from-shell auto-complete-exuberant-ctags ac-php ac-etags)))
  '(scroll-step 1)
  '(show-paren-mode t)
  '(tab-width 2)
  '(transient-mark-mode t))
-
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "https://melpa.org/packages/")
-   t)
-  (package-initialize))
-  
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -80,77 +63,37 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; (global-set-key (kbd "C-x v") 'find-file-at-point)
+(load "~/.emacs.d/rc/emacs-rc-phpmode.el")
+(load "~/.emacs.d/rc/emacs-rc-webmode.el")
+(load "~/.emacs.d/rc/emacs-rc-css.el")
+(load "~/.emacs.d/rc/emacs-rc-yaml.el")
+(load "~/.emacs.d/rc/emacs-rc-misc.el")
+(load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
+(load "~/.emacs.d/rc/emacs-rc-uniquify.el")
+(load "~/.emacs.d/rc/emacs-rc-files-buffers.el")
+(load "~/.emacs.d/rc/emacs-rc-tramp.el")
 
-;; (global-set-key (kbd "C-M-]") 'other-window)
-;; (defun prev-window ()
-;;   ""
-;;   (interactive
-;;    (other-window -1)))
+(load "~/.emacs.d/rc/emacs-rc-js.el")
 
-(put 'narrow-to-region 'disabled nil)
-(setq php-executable "/usr/bin/php")
+(load "~/.emacs.d/rc/emacs-rc-package.el")
 
+(load "~/.emacs.d/rc/emacs-rc-yas.el")
 
-(setq yas-snippet-dirs
-      '("~/conf/.emacs.d/snippets"))
-(require 'yasnippet)
-(yas-global-mode 1)
+(load "~/.emacs.d/rc/emacs-rc-commands.el")
 
+(load "~/.emacs.d/rc/emacs-rc-enabled-commands.el")
 
-(add-to-list 'load-path "~/conf/.emacs.d/packages/php-auto-yasnippets")
-(setq php-auto-yasnippets-php-program "~/conf/.emacs.d/packages/php-auto-yasnippets/Create-PHP-YASnippet.php")
-(require 'php-auto-yasnippets)
+(load "~/.emacs.d/rc/emacs-rc-enabled-commands.el")
 
-(define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
+(load "~/.emacs.d/rc/emacs-rc-charsets.el")
 
+(load "~/.emacs.d/rc/emacs-rc-mcursors.el")
 
-(defun xml-format ()
-  (interactive)
-  (save-excursion
-    (shell-command-on-region (mark) (point) "xmllint --format -" (buffer-name) t)
-    )
-  )
-
-(put 'upcase-region 'disabled nil)
-
-(desktop-save-mode 1)
-
-(set-language-environment 'UTF-8)
-(setq default-buffer-file-coding-system 'mule-utf-8-unix)
-(prefer-coding-system 'mule-utf-8-unix)
-(set-terminal-coding-system 'mule-utf-8-unix)
-(set-keyboard-coding-system 'mule-utf-8-unix)
-(setq-default coding-system-for-read 'mule-utf-8-unix)
-(setq-default coding-system-for-write 'mule-utf-8-unix)
-(setq selection-coding-system 'mule-utf-8-unix)
-(setq default-process-coding-system 'mule-utf-8-unix)
-(put-charset-property 'cyrillic-iso8859-5 'preferred-coding-system 'mule-utf-8-unix)
-
-
-(global-set-key (kbd "C-<tab>") 'next-user-buffer)
-(global-set-key (kbd "C-S-<iso-lefttab>") 'previous-user-buffer)
-(put 'downcase-region 'disabled nil)
-
-(defun downcase-first-char (str)
-  (concat
-   (downcase (substring str 0 1))
-   (substring str 1))
-  )
+(load "~/.emacs.d/rc/emacs-rc-mysql.el")
 
 ;;(add-to-list 'load-path "~/.emacs.d/modes/nginx-mode")
 ;;(require 'nginx-mode)
 
-(add-to-list 'load-path "/home/mkaban/conf/.emacs.d/multiple-cursors.el")
-(require 'multiple-cursors)
-
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(put 'erase-buffer 'disabled nil)
 
 ;; (add-to-list 'load-path "/home/mkaban/conf/.emacs.d/elpa/auto-complete-20170124.1845/auto-complete.el")
 ;; (require 'auto-complete)
@@ -165,13 +108,8 @@
 ;;              :ensure t
 ;;              :init (global-flycheck-mode))
 
-(setq sql-mysql-login-params
-      '((user :default "contentinn")
-        (database :default "content_inn_prod")
-        (password :default "7887")
-        (server :default "127.0.0.1")
-        (port :default 3300)))
+(desktop-save-mode 1)
 
-(add-hook 'sql-interactive-mode-hook
-          (lambda ()
-            (toggle-truncate-lines t)))
+(load "~/.emacs.d/rc/emacs-rc-ecb.el")
+
+(global-set-key (kbd "M-x") 'helm-M-x)

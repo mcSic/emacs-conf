@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "store.js"
+      :pointmax 362
+      :fsize 361
+      :lastmodtime '(23469 63327 348258 481000)
+      :unmatched-syntax '((VARIABLE 230 . 236) (VARIABLE 237 . 242) (VARIABLE 243 . 248) (PAREN_BLOCK 265 . 361) (VARIABLE 8 . 11) (VARIABLE 12 . 16) (STRING 17 . 22) (VARIABLE 24 . 30) (VARIABLE 31 . 35) (VARIABLE 36 . 40) (STRING 41 . 47) (VARIABLE 50 . 56) (VARIABLE 57 . 70) (VARIABLE 71 . 75) (STRING 76 . 101) (VARIABLE 103 . 109) (VARIABLE 110 . 122) (VARIABLE 123 . 127) (STRING 128 . 152) (VARIABLE 154 . 160) (VARIABLE 161 . 177) (VARIABLE 178 . 182) (STRING 183 . 211) (VARIABLE 214 . 217) (PAREN_BLOCK 221 . 227))))
+  :file "!var!usr!www!csp.mk!web!public!src!js!vue!search!store!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

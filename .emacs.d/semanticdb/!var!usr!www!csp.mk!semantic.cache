@@ -1,0 +1,32 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode makefile-gmake-mode
+      :tags 
+        '( (".PHONY" function (:arguments ("clear-cache" "fix-permissions" "build-model" "install-npm-modules" "compile-static")) nil [2 85])
+            ("CREATE_DIRS" variable (:default-value ("./cache" "./var/cache" "./var/log" "./var/tmp" "./var/run")) nil [86 150])
+            ("SYSTEM_DIRS" variable (:default-value ("./web/uploads" "./web/extra/files" "./var/tmp/0-gtemplate-document")) nil [150 227])
+            ("fix-permissions" function nil nil [228 409])
+            ("clear-cache" function nil nil [442 509])
+            ("build-model" function (:arguments ("clear-cache")) nil [510 788])
+            ("install-npm-modules" function nil nil [789 832])
+            ("compile-static" function (:arguments ("install-npm-modules")) nil [833 888]))          
+      :file "Makefile"
+      :pointmax 888
+      :fsize 887
+      :lastmodtime '(23458 14137 433045 187000)
+      :unmatched-syntax '((shell-command 870 . 887) (bol 869 . 869)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "package.json"
+      :pointmax 2427
+      :fsize 2426
+      :lastmodtime '(23473 58902 790029 566000)
+      :unmatched-syntax nil))
+  :file "!var!usr!www!csp.mk!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
