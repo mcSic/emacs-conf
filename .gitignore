@@ -11,3 +11,6 @@ ido.last
 .emacs.d/.mc-lists.el
 .directory
 .emacs.d/elpa/archives/gnu/archive-contents
+.emacs.d/eshell/history
+.emacs.d/ecb
+*.elc

@@ -1,3 +1,8 @@
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -41,20 +46,24 @@
  '(ecb-source-path
    (quote
     (("/var/usr/www/csp.mk" "ContentInn")
-     ("/home/mkaban/sandbox/tour-of-heroes" "tour-of-heroes")
      ("/home/mkaban/sandbox/budget" "pet-budget")
-     ("/home/mkaban/sandbox/new-search-form" "nsf"))))
- '(flycheck-javascript-jshint-executable "/home/mkaban/.nvm/versions/node/v4.4.1/bin/jshint")
+     ("/home/mkaban/sandbox/new-search-form" "nsf")
+     ("/" "/")
+     ("/home/mkaban/playground" "budget-2")
+     ("/home/mkaban/playground/budget-2" "budget-2"))))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
+ '(package-check-signature nil)
  '(package-selected-packages
    (quote
-    (xref-js2 company helm js2-mode typescript-mode yasnippet flycheck exec-path-from-shell auto-complete-exuberant-ctags ac-php ac-etags)))
+    (highlight-symbol helm-projectile company-go go-projectile xref-js2 company helm js2-mode typescript-mode yasnippet exec-path-from-shell auto-complete-exuberant-ctags ac-php ac-etags)))
  '(scroll-step 1)
  '(show-paren-mode t)
- '(tab-width 2)
- '(transient-mark-mode t))
+ '(tab-width 2))
+
+
+(transient-mark-mode t)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -72,8 +81,9 @@
 (load "~/.emacs.d/rc/emacs-rc-uniquify.el")
 (load "~/.emacs.d/rc/emacs-rc-files-buffers.el")
 (load "~/.emacs.d/rc/emacs-rc-tramp.el")
+(load "~/.emacs.d/rc/emacs-rc-golang.el")
 
-(load "~/.emacs.d/rc/emacs-rc-js.el")
+;; (load "~/.emacs.d/rc/emacs-rc-js.el")
 
 (load "~/.emacs.d/rc/emacs-rc-package.el")
 
@@ -103,13 +113,9 @@
   (exec-path-from-shell-initialize))
 
 (require 'flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-;; (use-package flycheck
-;;              :ensure t
-;;              :init (global-flycheck-mode))
 
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
-(load "~/.emacs.d/rc/emacs-rc-ecb.el")
-
-(global-set-key (kbd "M-x") 'helm-M-x)
+;; ;; (load "~/.emacs.d/rc/emacs-rc-ecb.el")
+ 
+;; (global-set-key (kbd "M-x") 'helm-M-x)
