@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: response
+# key: *resp
+# --
+'$1':
+  description: $2
+  content:
+    application/json
+      schema:
