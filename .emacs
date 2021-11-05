@@ -67,7 +67,7 @@
  '(js-indent-level 2)
  '(package-check-signature nil)
  '(package-selected-packages
-   '(origami treemacs-projectile counsel-projectile ivy gruvbox-theme afternoon-theme dash magit howm rainbow-delimiters command-log-mode helm-projectile projectile flycheck lsp-ui use-package lsp-mode auto-complete highlight-symbol company-go go-projectile xref-js2 company js2-mode typescript-mode yasnippet exec-path-from-shell))
+   '(go-snippets origami treemacs-projectile counsel-projectile ivy gruvbox-theme afternoon-theme dash magit howm rainbow-delimiters command-log-mode helm-projectile projectile flycheck lsp-ui use-package lsp-mode auto-complete highlight-symbol company-go go-projectile xref-js2 company js2-mode typescript-mode yasnippet exec-path-from-shell))
  '(projectile-compile-use-comint-mode t)
  '(scroll-step 1)
  '(show-paren-mode t)
