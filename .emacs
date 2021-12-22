@@ -67,7 +67,7 @@
  '(js-indent-level 2)
  '(package-check-signature nil)
  '(package-selected-packages
-   '(wgrep go-snippets origami treemacs-projectile counsel-projectile ivy gruvbox-theme afternoon-theme dash magit howm rainbow-delimiters command-log-mode helm-projectile projectile flycheck lsp-ui use-package lsp-mode auto-complete highlight-symbol company-go go-projectile xref-js2 company js2-mode typescript-mode yasnippet exec-path-from-shell))
+   '(golint wgrep go-snippets origami treemacs-projectile counsel-projectile ivy gruvbox-theme afternoon-theme dash magit howm rainbow-delimiters command-log-mode helm-projectile projectile flycheck lsp-ui use-package lsp-mode auto-complete highlight-symbol company-go go-projectile xref-js2 company js2-mode typescript-mode yasnippet exec-path-from-shell))
  '(projectile-compile-use-comint-mode t)
  '(scroll-step 1)
  '(show-paren-mode t)
@@ -106,9 +106,13 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load "~/.emacs.d/rc/emacs-rc-phpmode.el")
-(load "~/.emacs.d/rc/emacs-rc-webmode.el")
-(load "~/.emacs.d/rc/emacs-rc-css.el")
+
+(load "~/.emacs.d/rc/emacs-rc-package.el")
+
+
+;; (load "~/.emacs.d/rc/emacs-rc-phpmode.el")
+;; (load "~/.emacs.d/rc/emacs-rc-webmode.el")
+;; (load "~/.emacs.d/rc/emacs-rc-css.el")
 (load "~/.emacs.d/rc/emacs-rc-yaml.el")
 (load "~/.emacs.d/rc/emacs-rc-misc.el")
 (load "~/.emacs.d/rc/emacs-rc-bookmarks.el")
@@ -119,7 +123,6 @@
 
 ;; (load "~/.emacs.d/rc/emacs-rc-js.el")
 
-(load "~/.emacs.d/rc/emacs-rc-package.el")
 
 (load "~/.emacs.d/rc/emacs-rc-yas.el")
 
@@ -155,9 +158,6 @@
 
 
 ;; (use-package helm)
-
-(require 'use-package)
-(setq use-package-always-ensure t)
 
 (use-package command-log-mode
   :init)

@@ -8,10 +8,46 @@
 (setq exec-path (append '("/usr/lib/go/bin") exec-path))
 (setenv "PATH" (concat "/usr/lib/go/bin:" (getenv "PATH")))
 
-(require 'go-mode)
-(defun go-mode-setup())
+(use-package go-mode
+  :load-path "/home/mkaban/playground/go/src/golang.org/x/lint/misc/emacs"
+  
+  :config
+  (setenv "GOPATH" "/home/maksym_kaban/go")
+  (use-package golint)
+  (projectile-global-mode 1)
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (use-package go-projectile)
+  (go-projectile-tools-add-path)
+  (setq gofmt-command (concat go-projectile-tools-path "/bin/goimports"))
+  (use-package company
+    :config
+    ;; Optionally enable completion-as-you-type behavior.
+    (setq company-idle-delay 0)
+    (setq company-minimum-prefix-length 1))
+  (use-package company-go)
+  (use-package lsp-mode
+    :commands (lsp lsp-deferred)
+    :hook (go-mode . lsp-deferred))
+  (use-package yasnippet
+    :ensure t
+    :commands yas-minor-mode
+    :hook (go-mode . yas-minor-mode))
 
-(setenv "GOPATH" "/home/mkaban/playground/go")
+  :hook ( on-company-mode )
+  )
+
+(defun on-company-mode ()
+    (progn
+      (company-mode)
+      (set (make-local-variable 'company-backends) '(company-go)))
+  )
+
+;; (require 'go-mode)
+
+;;(setenv "GOPATH" "/home/mkaban/playground/go")
+
 ; As-you-type error highlighting
 ; (add-hook 'after-init-hook #'global-flycheck-mode)
 ;; (defun my-go-mode-hook ()
@@ -33,30 +69,25 @@
 ;;         (define-key map (kbd "C-c b") 'go-run)))
 ;; (add-hook 'go-mode-hook 'my-go-mode-hook)
 
-(add-to-list 'load-path "/home/mkaban/playground/go/src/golang.org/x/lint/misc/emacs")
-(require 'golint)
+;;(add-to-list 'load-path "/home/mkaban/playground/go/src/golang.org/x/lint/misc/emacs")
+;;(require 'golint)
 
 ; Use projectile-test-project in place of 'compile'; assign whatever key you want.
-(global-set-key [f9] 'projectile-test-project)
+;;(global-set-key [f9] 'projectile-test-project)
 
 ; "projectile" recognizes git repos (etc) as "projects" and changes settings
 ; as you switch between them. 
-(projectile-global-mode 1)
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
-(require 'go-projectile)
-(go-projectile-tools-add-path)
-(setq gofmt-command (concat go-projectile-tools-path "/bin/goimports"))
+;; (require 'go-projectile)
+;; (go-projectile-tools-add-path)
+;; (setq gofmt-command (concat go-projectile-tools-path "/bin/goimports"))
 
-; "company" is auto-completion
-(require 'company)
-(require 'go-mode)
-(require 'company-go)
-(add-hook 'go-mode-hook (lambda ()
-                          (company-mode)
-                          (set (make-local-variable 'company-backends) '(company-go))))
+;; ; "company" is auto-completion
+;; (require 'company)
+;; (require 'company-go)
+;; (add-hook 'go-mode-hook (lambda ()
+;;                           (company-mode)
+;;                           (set (make-local-variable 'company-backends) '(company-go))))
 
 (use-package lsp-mode
   :ensure t
@@ -76,15 +107,15 @@
   :commands lsp-ui-mode)
 
 ;; Company mode is a standard completion package that works well with lsp-mode.
-(use-package company
-  :ensure t
-  :config
-  ;; Optionally enable completion-as-you-type behavior.
-  (setq company-idle-delay 0)
-  (setq company-minimum-prefix-length 1))
+;; (use-package company
+;;   :ensure t
+;;   :config
+;;   ;; Optionally enable completion-as-you-type behavior.
+;;   (setq company-idle-delay 0)
+;;   (setq company-minimum-prefix-length 1))
 
 ;; Optional - provides snippet support.
-(use-package yasnippet
-  :ensure t
-  :commands yas-minor-mode
-  :hook (go-mode . yas-minor-mode))
+;; (use-package yasnippet
+;;   :ensure t
+;;   :commands yas-minor-mode
+;;   :hook (go-mode . yas-minor-mode))
