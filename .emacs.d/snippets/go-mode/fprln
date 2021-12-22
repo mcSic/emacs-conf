@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fprln
+# key: fprln
+# --
+fmt.Fprintln(out, \`$0\`)

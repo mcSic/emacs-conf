@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fprf
+# key: fprf
+# --
+fmt.Fprintf(out, \`$0\`)
